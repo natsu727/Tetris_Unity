@@ -1,4 +1,4 @@
-# Handmaid Tetris with Unity
+# Tetris made with Unity
 ## How to use
 1. clone this repositry files
 1. open unityhub
