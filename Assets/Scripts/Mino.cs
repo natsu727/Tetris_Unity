@@ -22,7 +22,8 @@ public class Mino : MonoBehaviour
     float FingerPosX0; //タップし、指が画面に触れた瞬間の指のx座標
     float FingerPosX1; //タップし、指が画面から離れた瞬間のx座標
     float FingerPosNow; //現在の指のx座標
-    float PosDiff=0.5f;
+    float PosDiff=300f;
+    float tapDiff=0.5f;
     void Update()
     {
         foreach (Touch touch  in Input.touches){
@@ -100,7 +101,7 @@ public class Mino : MonoBehaviour
     public void MouseButton(){
         
         
-        if (Mathf.Abs(FingerPosX0 - FingerPosX1) < PosDiff)
+        if (Mathf.Abs(FingerPosX0 - FingerPosX1) < tapDiff)
         {
             transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), 90);
 
