@@ -9,9 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/TetrisTitle.unity
+    path: Assets/game/tetris/Scenes/TetrisTitle.unity
     guid: 844140d64006962a6b62b62317d4c44a
   - enabled: 1
-    path: Assets/Scenes/Tetris.unity
+    path: Assets/game/tetris/Scenes/Tetris.unity
     guid: 77083b6d16599888a8429493b0058b2c
   m_configObjects: {}
