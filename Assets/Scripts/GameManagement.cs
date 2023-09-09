@@ -125,4 +125,11 @@ public class GameManagement : MonoBehaviour
     public void ReturnTitle(){
         SceneManager.LoadScene("TetrisTitle");
     }
+        public void OpenRule(){
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void ReturnPortal(){
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }
