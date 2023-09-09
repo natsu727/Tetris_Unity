@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3168464396527951506}
   - component: {fileID: 7463819781121841613}
-  - component: {fileID: 8281853355257731327}
+  - component: {fileID: 4031856417138182768}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &8281853355257731327
+--- !u!61 &4031856417138182768
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1345424804555065426}
   - component: {fileID: 3090598747546609766}
-  - component: {fileID: 7418014383748099643}
+  - component: {fileID: 5713136043166233386}
   m_Layer: 0
   m_Name: Square (1)
   m_TagString: Untagged
@@ -215,7 +215,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &7418014383748099643
+--- !u!61 &5713136043166233386
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -270,7 +270,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7417123647093418226}
   - component: {fileID: 4966832489143617828}
-  - component: {fileID: 3220890677234320197}
+  - component: {fileID: 1564841263015869380}
   m_Layer: 0
   m_Name: Square (3)
   m_TagString: Untagged
@@ -345,7 +345,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &3220890677234320197
+--- !u!61 &1564841263015869380
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -400,7 +400,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5108955888307426967}
   - component: {fileID: 8184886942150437957}
-  - component: {fileID: 1383660523634401302}
+  - component: {fileID: 2738512727330135247}
   m_Layer: 0
   m_Name: Imino
   m_TagString: Untagged
@@ -443,7 +443,7 @@ MonoBehaviour:
   previousTime: 0
   fallTime: 1
   rotationPoint: {x: 0, y: 0, z: 0}
---- !u!50 &1383660523634401302
+--- !u!50 &2738512727330135247
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -480,7 +480,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6839974239321104567}
   - component: {fileID: 955400773430542646}
-  - component: {fileID: 7496808226410329795}
+  - component: {fileID: 4143367817686784252}
   m_Layer: 0
   m_Name: Square (2)
   m_TagString: Untagged
@@ -555,7 +555,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &7496808226410329795
+--- !u!61 &4143367817686784252
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

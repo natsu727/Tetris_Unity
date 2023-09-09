@@ -19,8 +19,56 @@ public class Mino : MonoBehaviour
 
     private static Transform[,] grid = new Transform[width, height];
 
+    float FingerPosX0; //タップし、指が画面に触れた瞬間の指のx座標
+    float FingerPosX1; //タップし、指が画面から離れた瞬間のx座標
+    float FingerPosNow; //現在の指のx座標
+    float PosDiff=1.0f;
     void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            FingerPosX0 = Input.mousePosition.x;
+        }
+    
+        if (Input.GetMouseButtonUp(0))
+        {
+            FingerPosX1 = Input.mousePosition.x;
+        }
+        
+        if (Input.GetMouseButton(0))
+        {
+            FingerPosNow = Input.mousePosition.x;
+        }
+        //ジャンプの判断基準
+        if (Mathf.Abs(FingerPosX0 - FingerPosX1) < PosDiff)
+        {
+            transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), 90);
+
+            if(!ValidMovement()){
+                transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), -90);
+            }
+        }
+        
+        //横移動の判断基準
+        if (FingerPosNow - FingerPosX0 >= PosDiff)
+        {
+            transform.position += new Vector3(1, 0, 0);
+            
+            if (!ValidMovement()) 
+            {
+                transform.position -= new Vector3(1, 0, 0);
+            }
+        }
+        else if (FingerPosNow - FingerPosX0 >= -PosDiff)
+        {
+            transform.position += new Vector3(-1, 0, 0);
+            
+            if (!ValidMovement()) 
+            {
+                transform.position -= new Vector3(-1, 0, 0);
+            }
+        };
+
         MinoMovememt();
     }
 

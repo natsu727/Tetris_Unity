@@ -14,9 +14,9 @@ public class GameManagement : MonoBehaviour
     private int score;
     
     public int currentScore;
-    public int clearScore =1500;
+    // public int clearScore =1500;
     
-    public Text timerText;
+    // public Text timerText;
     public float gameTime =120f;
     int seconds;
     
@@ -62,13 +62,13 @@ public class GameManagement : MonoBehaviour
     {
     	gameTime -= Time.deltaTime;
     	seconds =(int)gameTime;
-    	timerText.text =seconds.ToString();
+    	// timerText.text =seconds.ToString();
     	
-    	if(seconds == 0)
-    	{
-    		Debug.Log("TimeOut");
-    		GameOver();
-    	}
+    	// if(seconds == 0)
+    	// {
+    	// 	Debug.Log("TimeOut");
+    	// 	GameOver();
+    	// }
     }
 
     // スコアの追加
@@ -80,11 +80,11 @@ public class GameManagement : MonoBehaviour
 
         Debug.Log(currentScore);
         
-        if(currentScore >= clearScore)
-        {
-        	GameClear();
-        	//Debug.Log(clearScore);
-        }
+        // if(currentScore >= clearScore)
+        // {
+        // 	GameClear();
+        // 	//Debug.Log(clearScore);
+        // }
 
     }
     
