@@ -8,7 +8,7 @@ public class Mino : MonoBehaviour
     public Vector3 acceleration;
     public float previousTime;
     // minoの落ちる時間
-    public float fallTime=1f;
+    public float fallTime=1.0f;
 
     // ステージの大きさ
     private static int width = 10;
@@ -25,9 +25,9 @@ public class Mino : MonoBehaviour
     float PosDiff=0.5f;
     void Update()
     {
-        foreach (var touch  in Input.touches){
+        foreach (Touch touch  in Input.touches){
                 if(touch.phase == TouchPhase.Began){
-                    
+
                     FingerPosX0 = touch.position.x;
                 }
                 if(touch.phase == TouchPhase.Ended){
@@ -36,14 +36,12 @@ public class Mino : MonoBehaviour
                 
                 }
                 
-                if(touch.phase==TouchPhase.Moved){
+                if(touch.phase == TouchPhase.Moved){
                 
-                    FingerPosNow=touch.position.x;
+                    FingerPosNow = touch.position.x;
                 
                 }
-                
                 MouseButton();
-        // }
         }
         MinoMovememt();
     }
@@ -101,7 +99,7 @@ public class Mino : MonoBehaviour
 
     public void MouseButton(){
         
-        //ジャンプの判断基準
+        
         if (Mathf.Abs(FingerPosX0 - FingerPosX1) < PosDiff)
         {
             transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), 90);
@@ -112,7 +110,7 @@ public class Mino : MonoBehaviour
         }
         
         //横移動の判断基準
-        if (FingerPosNow - FingerPosX0 >= PosDiff)
+        if (FingerPosNow - FingerPosX0 > PosDiff)
         {
             transform.position += new Vector3(1, 0, 0);
             
@@ -121,7 +119,7 @@ public class Mino : MonoBehaviour
                 transform.position -= new Vector3(1, 0, 0);
             }
         }
-        else if (FingerPosNow - FingerPosX0 >= -PosDiff)
+        else if (FingerPosNow - FingerPosX0 < -PosDiff)
         {
             transform.position += new Vector3(-1, 0, 0);
             
