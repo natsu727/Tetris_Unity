@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Mino : MonoBehaviour
 {
+    public Vector3 acceleration;
     public float previousTime;
     // minoの落ちる時間
     public float fallTime=1f;
