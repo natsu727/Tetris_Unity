@@ -446,7 +446,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 460.00006, y: 378.00003}
-  m_SizeDelta: {x: 930.99994, y: 701}
+  m_SizeDelta: {x: 1564, y: 701}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &303804353
 MonoBehaviour:
@@ -634,8 +634,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 256966520}
   currentScore: 0
-  clearScore: 1500
-  timerText: {fileID: 1524609966}
   gameTime: 60
   gamePauseUI: {fileID: 808134995}
   CountText: {fileID: 661503442}

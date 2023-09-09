@@ -8,7 +8,7 @@ public class Mino : MonoBehaviour
     public Vector3 acceleration;
     public float previousTime;
     // minoの落ちる時間
-    public float fallTime=1f;
+    public float fallTime=1.0f;
 
     // ステージの大きさ
     private static int width = 10;
@@ -19,8 +19,30 @@ public class Mino : MonoBehaviour
 
     private static Transform[,] grid = new Transform[width, height];
 
+    float FingerPosX0; //タップし、指が画面に触れた瞬間の指のx座標
+    float FingerPosX1; //タップし、指が画面から離れた瞬間のx座標
+    float FingerPosNow; //現在の指のx座標
+    float PosDiff=0.5f;
     void Update()
     {
+        foreach (Touch touch  in Input.touches){
+                if(touch.phase == TouchPhase.Began){
+
+                    FingerPosX0 = touch.position.x;
+                }
+                if(touch.phase == TouchPhase.Ended){
+                
+                    FingerPosX1 = touch.position.x;
+                
+                }
+                
+                if(touch.phase == TouchPhase.Moved){
+                
+                    FingerPosNow = touch.position.x;
+                
+                }
+                MouseButton();
+        }
         MinoMovememt();
     }
 
@@ -73,6 +95,39 @@ public class Mino : MonoBehaviour
                 transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), -90);
             }
         }
+    }
+
+    public void MouseButton(){
+        
+        
+        if (Mathf.Abs(FingerPosX0 - FingerPosX1) < PosDiff)
+        {
+            transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), 90);
+
+            if(!ValidMovement()){
+                transform.RotateAround(transform.TransformPoint(rotationPoint), new Vector3(0, 0, 1), -90);
+            }
+        }
+        
+        //横移動の判断基準
+        if (FingerPosNow - FingerPosX0 > PosDiff)
+        {
+            transform.position += new Vector3(1, 0, 0);
+            
+            if (!ValidMovement()) 
+            {
+                transform.position -= new Vector3(1, 0, 0);
+            }
+        }
+        else if (FingerPosNow - FingerPosX0 < -PosDiff)
+        {
+            transform.position += new Vector3(-1, 0, 0);
+            
+            if (!ValidMovement()) 
+            {
+                transform.position -= new Vector3(-1, 0, 0);
+            }
+        };
     }
     
     public void CheckLines()
