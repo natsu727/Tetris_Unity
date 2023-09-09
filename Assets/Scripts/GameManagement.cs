@@ -119,6 +119,10 @@ public class GameManagement : MonoBehaviour
     }
 
     public void Reload(){
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("Tetris");
+    }
+
+    public void ReturnTitle(){
+        SceneManager.LoadScene("TetrisTitle");
     }
 }
